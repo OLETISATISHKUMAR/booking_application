@@ -59,7 +59,7 @@ function Login() {
           <div className="w-full max-w-md bg-white rounded-lg shadow-md border border-gray-300">
             <div className="p-6 space-y-4 md:space-y-6 sm:p-8">
               <h1 className="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl text-center">
-                Signin
+                Login
               </h1>
               <form className="space-y-4 md:space-y-6" action="#">
                 <div>
