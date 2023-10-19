@@ -2,7 +2,7 @@ const User = require("../models/user.model");
 const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 require("dotenv").config();
-
+const JWT_SECRET_KEY = "SATISH@5499"
 exports.create = async (req, res) => {
   try {
     const { username, email, password } = req.body;
@@ -67,3 +67,27 @@ exports.login = async (req, res) => {
   }
 };
 
+
+exports.getUser = async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    const user = await User.findById(id);
+
+    if (!user) {
+      return res.status(404).json({ 
+        message: "User Not Found",
+      });
+    }
+
+    res.status(200).json({
+      message: "User Retrieved Successfully",
+      user,
+    });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({
+      message: "Internal Server Error",
+    });
+  }
+};

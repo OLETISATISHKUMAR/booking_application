@@ -3,6 +3,7 @@ const express = require("express")
 
 const route = express.Router()
 
-route.use("/register-user", User.create)
-route.use("/login-user", User.login)
+route.post("/register-user", User.create)
+route.post("/login-user", User.login)
+route.get("/getuser/:id", User.getUser)
 module.exports = route
