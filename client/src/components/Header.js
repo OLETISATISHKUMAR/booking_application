@@ -4,7 +4,7 @@ import Logo from "../assets/TravelLogo.jpg";
 
 function Header() {
   return (
-    <header className="bg-white p-4 shadow-md">
+    <header className="bg-white px-10 py-2 shadow-md">
       <div className="container mx-auto flex justify-between items-center">
         <Link to="/" className="flex items-center">
           <img src={Logo} alt="Component Logo" className="w-20 h-20" />
@@ -20,8 +20,8 @@ function Header() {
         </nav>
 
         <div className="flex space-x-4 justify-start">
-          <Link to="/login" className="text-black text-lg">Login</Link>
-          <Link to="/register" className="text-black text-lg">Register</Link>
+          <button><Link to="/login" className="text-black text-lg">Login</Link></button>
+          <button><Link to="/register" className="text-black text-lg">Register</Link></button>
         </div>
       </div>
     </header>
